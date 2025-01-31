@@ -56,17 +56,17 @@ function playRound(humanChoice,computerChoice){
 
 function playGame(){
   for(let i=0;i<5;i++){
-    const humanChoice=getHumanChoice();
     const computerChoice=getComputerChoice();
-    playRound();
+    const humanChoice=getHumanChoice();
+    playRound(humanChoice,computerChoice);
   }
   
   if(humanScore>computerScore){
-    console.log('Human wins with a score of '+ humanScore + '-' + computerScore + 'against the computer after five rounds')
+    console.log('Human wins with a score of '+ humanScore + '-' + computerScore + ' against the computer after five rounds')
   }
   
   else if(humanScore<computerScore){
-    console.log('Computer wins with a score of '+ humanScore + '-' + computerScore + 'against the computer after five rounds')
+    console.log('Computer wins with a score of '+ humanScore + '-' + computerScore + ' against the human after five rounds')
   }
   
   else if (humanScore==computerScore){
