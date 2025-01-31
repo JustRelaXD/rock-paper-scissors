@@ -11,3 +11,6 @@ switch(randomNumber){
 }
 }
 
+function getHumanChoice(){
+  let HumanChoice=prompt("Enter your choice!")
+}
