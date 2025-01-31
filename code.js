@@ -1,3 +1,5 @@
+let humanScore=0;
+let computerScore=0;
 
 function getComputerChoice(){
 randomNumber=Math.floor(Math.random()*3);
@@ -15,12 +17,6 @@ function getHumanChoice(){
   let HumanChoice=prompt("Enter your choice!")
   return HumanChoice.toLowerCase();
 }
-
-let humanScore=0;
-let computerScore=0;
-
-const humanChoice=getHumanChoice();
-const computerChoice=getComputerChoice();
 
 function playRound(humanChoice,computerChoice){
   if(humanChoice==computerChoice){
@@ -55,5 +51,28 @@ function playRound(humanChoice,computerChoice){
   else if(humanChoice=='scissor' && computerChoice=='rock'){
     computerScore+=1;
     console.log('You lose! Rock beats Scissor')
+  }
+}
+
+function playGame(){
+  for(let i=0;i<5;i++){
+    const humanChoice=getHumanChoice();
+    const computerChoice=getComputerChoice();
+    playRound();
+  }
+  
+  if(humanScore>computerScore){
+    console.log('Human wins with a score of '+ humanScore + '-' + computerScore + 'against the computer after five rounds')
+  }
+  
+  else if(humanScore<computerScore){
+    console.log('Computer wins with a score of '+ humanScore + '-' + computerScore + 'against the computer after five rounds')
+  }
+  
+  else if (humanScore==computerScore){
+    console.log("It's a tie! The score is"+ humanScore + '-' + computerScore)
+  }
     
 }
+
+playGame();
