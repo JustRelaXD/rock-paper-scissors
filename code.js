@@ -12,8 +12,12 @@ switch(randomNumber){
 }
 
 function getHumanChoice(){
-  let HumanChoice=prompt("Enter your choice!")
+  let humanChoiceumanChoice=prompt("Enter your choice!")
+  return humanChoice;
 }
 
 let HumanScore=0;
 let ComputerScore=0;
+
+HumanChoice=getHumanChoice();
+ComputerChoice=getComputerChoice();
