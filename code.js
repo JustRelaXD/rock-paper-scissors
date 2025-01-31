@@ -14,3 +14,6 @@ switch(randomNumber){
 function getHumanChoice(){
   let HumanChoice=prompt("Enter your choice!")
 }
+
+let HumanScore=0;
+let ComputerScore=0;
