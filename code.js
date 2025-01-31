@@ -16,39 +16,44 @@ function getHumanChoice(){
   return HumanChoice.toLowerCase();
 }
 
-let HumanScore=0;
-let ComputerScore=0;
+let humanScore=0;
+let computerScore=0;
 
 const humanChoice=getHumanChoice();
 const computerChoice=getComputerChoice();
 
 function playRound(humanChoice,computerChoice){
   if(humanChoice==computerChoice){
-    winner='none';
+  console.log('Nobody wins. Both have same choice')
   }
   
   else if(humanChoice=='rock' && computerChoice=='scissor'){
-    winner='human';
+    humanScore+=1;
+    console.log('You win! Rock beats Scissor')
   }
   
   else if(humanChoice=='paper' && computerChoice=='rock'){
-    winner='human';
+    humanScore+=1;
+    console.log('You win! Paper beats Rock')
   }
   
   else if(humanChoice=='scissor' && computerChoice=='paper'){
-    winner='human';
+    humanScore+=1;
+    console.log('You win! Scissor beats Paper')
   }
   
   else if(humanChoice=='rock' && computerChoice=='paper'){
-    winner='computer';
+    computerScore+=1;
+    console.log('You lose! Paper beats Rock')
   }
   
   else if(humanChoice=='paper' && computerChoice=='scissor'){
-    winner='computer';
+    computerScore+=1;
+    console.log('You lose! Scissor beats Paper')
   }
   
   else if(humanChoice=='scissor' && computerChoice=='rock'){
-    winner='computer';
-  }
+    computerScore+=1;
+    console.log('You lose! Rock beats Scissor')
+    
 }
-
