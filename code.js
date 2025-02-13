@@ -15,13 +15,12 @@ switch(randomNumber){
 
 rockButton.addEventListener("click",playRound('rock',getComputerChoice()))
 
+
 let humanScore=0;
 let computerScore=0;
 
-
-}
-
-function playRound(humanChoice,computerChoice){
+function playRound(){
+  computerChoice=getComputerChoice();
   if(humanChoice==computerChoice){
   console.log('Nobody wins. Both have same choice')
   }
