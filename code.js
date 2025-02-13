@@ -2,11 +2,6 @@ const rockButton=document.querySelector("#rock-button")
 const paperButton=document.querySelector("#paper-button")
 const scissorButton=document.querySelector("#scissor-button")
 
-rockButton.addEventListener()
-
-let humanScore=0;
-let computerScore=0;
-
 function getComputerChoice(){
 randomNumber=Math.floor(Math.random()*3);
 switch(randomNumber){
@@ -17,11 +12,13 @@ switch(randomNumber){
   case 2:
     return 'scissor';
 }
-}
 
-function getHumanChoice(){
-  let HumanChoice=prompt("Enter your choice!")
-  return HumanChoice.toLowerCase();
+rockButton.addEventListener("click",playRound('rock',getComputerChoice()))
+
+let humanScore=0;
+let computerScore=0;
+
+
 }
 
 function playRound(humanChoice,computerChoice){
@@ -61,7 +58,7 @@ function playRound(humanChoice,computerChoice){
 }
 
 function playGame(){
-  for(let i=0;i<5;i++){
+  {
     const computerChoice=getComputerChoice();
     const humanChoice=getHumanChoice();
     playRound(humanChoice,computerChoice);
