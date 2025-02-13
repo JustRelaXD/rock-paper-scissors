@@ -13,13 +13,13 @@ switch(randomNumber){
     return 'scissor';
 }
 
-rockButton.addEventListener("click",playRound('rock',getComputerChoice()))
+
 
 
 let humanScore=0;
 let computerScore=0;
 
-function playRound(){
+function playRound(humanChoice){
   computerChoice=getComputerChoice();
   if(humanChoice==computerChoice){
   console.log('Nobody wins. Both have same choice')
@@ -59,8 +59,9 @@ function playRound(){
 function playGame(){
   {
     const computerChoice=getComputerChoice();
-    const humanChoice=getHumanChoice();
-    playRound(humanChoice,computerChoice);
+    rockButton.addEventListener("click", () => playRound('rock'))
+    paperButton.addEventListener("click", () => playRound('paper'))
+    scissorButton.addEventListener("click", () => playRound('scissor'))
   }
   
   if(humanScore>computerScore){
@@ -78,3 +79,4 @@ function playGame(){
 }
 
 playGame();
+}
